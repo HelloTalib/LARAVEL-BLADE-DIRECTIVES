@@ -1,4 +1,3 @@
-Certainly! Below is a more comprehensive list of Laravel Blade directives:
 
 | Directive                           | Description                                           |
 | ----------------------------------- | ----------------------------------------------------- |
