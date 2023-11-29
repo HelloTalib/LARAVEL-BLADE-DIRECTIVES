@@ -1,53 +1,47 @@
-Creating a table with all Blade directives and ordering them strictly by "most use cases" can be challenging, as the popularity of directives often depends on specific project requirements. However, I can provide a comprehensive list of commonly used Laravel Blade directives ordered in a way that reflects their general popularity and utility:
+Certainly! Below is a more comprehensive list of Laravel Blade directives:
 
-| Directive                              | Description                                           |
-| ---------------------------------------| ----------------------------------------------------- |
-| `{{ $variable }}`                      | Echo the value of a variable.                         |
-| `{!! $variable !!}`                    | Echo the value without HTML escaping.                 |
-| `@if(condition)`                       | If statement.                                        |
-| `@elseif(condition)`                   | Elseif statement.                                    |
-| `@else`                                | Else statement.                                      |
-| `@endif`                               | End if statement.                                    |
-| `@unless(condition)`                   | Unless statement.                                    |
-| `@endunless`                           | End unless statement.                                |
-| `@for($i = 0; $i < 10; $i++)`          | For loop.                                            |
-| `@endfor`                              | End for loop.                                        |
-| `@foreach($items as $item)`            | Foreach loop.                                        |
-| `@endforeach`                          | End foreach loop.                                    |
-| `@while(condition)`                    | While loop.                                          |
-| `@endwhile`                            | End while loop.                                      |
-| `@include('view.name')`                | Include another Blade view.                          |
-| `@includeIf('view.name', ['data' => $data])` | Include the view if it exists.               |
-| `@includeWhen($condition, 'view.name', ['data' => $data])` | Include the view when a condition is true. |
-| `@includeFirst(['view1', 'view2'], ['data' => $data])` | Include the first view that exists from an array. |
-| `@stack('name')`                       | Push content to a stack.                             |
-| `@push('stack-name')`                  | Start a new stack.                                   |
-| `@endpush`                             | End stack pushing.                                   |
-| `@yield('content')`                    | Yield the content of a section.                      |
-| `@section('content')`                  | Define a section in a layout.                        |
-| `@show`                                | Display the contents of a section.                   |
-| `@endsection`                          | End section definition.                              |
-| `@extends('layout.name')`              | Extend a Blade layout.                               |
-| `@component('alert')`                  | Render a Blade component.                            |
-| `@slot('name')`                        | Define a slot in a component.                        |
-| `@endcomponent`                        | End component rendering.                             |
-| `@inject('variable', 'Class')`         | Inject a service container binding.                 |
-| `@auth`                                | Check if the user is authenticated.                  |
-| `@guest`                               | Check if the user is a guest.                        |
-| `@elseguest`                           | Check if the user is not a guest.                    |
-| `@auth('guard')`                       | Check if the user is authenticated on a specific guard.|
-| `@guest('guard')`                      | Check if the user is a guest on a specific guard.    |
-| `@env('environment')`                  | Check the application environment.                  |
-| `@switch($variable)`                   | Switch statement.                                   |
-| `@case('value')`                       | Case within a switch statement.                      |
-| `@default`                             | Default case within a switch statement.             |
-| `@endswitch`                           | End switch statement.                               |
-| `@error('field')`                      | Display an error message for a specific form field.  |
-| `@enderror`                            | End error display.                                   |
-| `@if($errors->any())`                  | Check if there are any validation errors.            |
-| `@endif`                               | End if validation errors.                            |
-| `@json($array)`                        | Convert an array to JSON and escape it.             |
-| `@env('environment')`                  | Check the application environment.                  |
-| `@csrf`                                | Output the CSRF token.                               |
-| `@method('PUT')`                       | Generate a hidden input with the _method field.     |
-| `@csrfField`                           | Generate a hidden input with the CSRF token.        |
+| Directive                           | Description                                           |
+| ----------------------------------- | ----------------------------------------------------- |
+| `@extends('layout')`                 | Extends a layout view.                                |
+| `@section('content')`               | Defines a section in a view.                          |
+| `@show`                             | Display the content of the current section.           |
+| `@yield('content')`                 | Outputs the content of a section.                     |
+| `@include('view')`                  | Includes another view.                                |
+| `@includeIf('view', ['some' => 'data'])` | Includes another view if the given condition is true. |
+| `@includeWhen($condition, 'view', ['some' => 'data'])` | Includes another view when the given condition is true. |
+| `@each('item.view', $items, 'item')` | Loops over a collection and includes a view for each item. |
+| `@if($condition)`                   | Starts an if statement.                               |
+| `@elseif($condition)`                | Adds an else if clause to an if statement.            |
+| `@else`                             | Adds an else clause to an if statement.               |
+| `@endif`                            | Ends an if statement.                                 |
+| `@unless($condition)`                | Starts an unless statement.                           |
+| `@endunless`                        | Ends an unless statement.                             |
+| `@for($i = 0; $i < 10; $i++)`       | Starts a for loop.                                    |
+| `@endfor`                           | Ends a for loop.                                      |
+| `@foreach($items as $item)`         | Starts a foreach loop.                                |
+| `@endforeach`                        | Ends a foreach loop.                                  |
+| `@while($condition)`                | Starts a while loop.                                  |
+| `@endwhile`                         | Ends a while loop.                                    |
+| `@isset($variable)`                 | Checks if a variable is set.                         |
+| `@empty($variable)`                 | Checks if a variable is empty.                       |
+| `@switch($value)`                   | Starts a switch statement.                            |
+| `@case($value)`                     | Defines a case in a switch statement.                |
+| `@default`                          | Defines the default case in a switch statement.      |
+| `@endswitch`                        | Ends a switch statement.                              |
+| `@auth`                             | Checks if the user is authenticated.                 |
+| `@guest`                            | Checks if the user is a guest.                       |
+| `@csrf`                             | Outputs the CSRF token.                               |
+| `@error('field')`                   | Outputs the validation error message for a field.    |
+| `@env('environment')`               | Checks the application environment.                  |
+| `@json($data)`                      | Converts a variable to JSON format.                  |
+| `@verbatim`                         | Treats enclosed content as raw text.                 |
+| `@php`                              | Executes PHP code.                                    |
+| `@push('scripts')`                  | Pushes content to a stack for later use.             |
+| `@stack('scripts')`                 | Outputs the content of a stack.                      |
+| `@hasSection('section')`            | Checks if a section is defined.                      |
+| `@inertia`                          | Renders an Inertia page.                             |
+| `@lang`                             | Translates the given key.                            |
+| `@choice`                           | Translates the given key with pluralization.         |
+| `@verbatim`                         | Treats enclosed content as raw text.                 |
+
+This list covers many of the commonly used Blade directives, but keep in mind that Laravel is a dynamic framework, and new features and directives may be introduced in later versions. Always refer to the official Laravel documentation for the most up-to-date information: [Laravel Blade Templates](https://laravel.com/docs/8.x/blade).
